@@ -14,6 +14,9 @@
 
     font-family: 'GmarketSansMedium';
     font-size: 2em;
+
+    padding: 1em;
+    padding-bottom: 0px;
 }
 
 
@@ -38,3 +41,10 @@
 .scrollable::-webkit-scrollbar-track {
     background: rgba(33, 122, 244, 0.1); /* 스크롤바 뒷 배경 색상 (WebKit 브라우저용) */
 }
+
+
+
+ .custom-card {
+     width: 70%;
+     height: 50%;
+ }
