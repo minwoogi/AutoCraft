@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.name {
+
+    font-family: 'GmarketSansMedium';
+    font-size: 2em;
+}
+
+
+/* 스크롤 가능한 영역 스타일 */
+.scrollable {
+    max-height: 90vh; /* 높이 조절 */
+    overflow-y: scroll; /* 수직 스크롤 활성화 */
+    overflow-x: hidden;
+    scrollbar-color: #217af4 rgba(33, 122, 244, 0.1); /* 스크롤바 색상 및 뒷 배경 색상 설정 */
+    scrollbar-width: thin; /* subpixel 스크롤바 너비 (auto, thin, none 중 선택) */
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 10px; /* 스크롤바의 너비 (WebKit 브라우저용) */
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background: #217af4; /* 스크롤바의 색상 (WebKit 브라우저용) */
+    border-radius: 10px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, 0.1); /* 스크롤바 뒷 배경 색상 (WebKit 브라우저용) */
+}
