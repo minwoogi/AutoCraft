@@ -39,6 +39,8 @@ dependencies {
     implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
 
 
+    implementation 'org.springframework.boot:spring-boot-starter-logging' // SLF4J를 Spring Boot에 추가
+    implementation 'org.slf4j:slf4j-api' // SLF4J API
 
 
 
