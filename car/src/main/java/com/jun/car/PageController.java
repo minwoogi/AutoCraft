@@ -18,6 +18,18 @@ public class PageController {
         return "index";
     }
 
+    @GetMapping("/chart")
+    public String getChart() {
+        return "indexChart";
+    }
+
+    @GetMapping("/result")
+    public String getResultPage() {
+
+        return "result";
+    }
+
+
 
 
 }

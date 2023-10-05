@@ -7,7 +7,7 @@ import lombok.Data;
 public class CarModel {
 
 
-    private String com; // 배기량
+    private String isg; // 배기량
     private String carb; // 차체
     private String tire; // 타이어
     private String wheel; // 휠인치
