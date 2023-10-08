@@ -11,8 +11,8 @@
         var chartDiv = document.getElementById('index_chart_div1');
 
         var data = google.visualization.arrayToDataTable([
-            ['', '',{ role: 'style' }],
-            ['차량 금액', 1973,'color: #4285F4'],
+            ['', '', {role: 'style'}],
+            ['차량 금액', 20000000, 'color: #4285F4'],
         ]);
 
 
@@ -32,7 +32,7 @@
                 subtitle: ' '
             },
             series: {
-                0: {axis: '기본 차량', color:'green'}, // Bind series 0 to an axis named 'distance'.
+                0: {axis: '기본 차량', color: 'green'}, // Bind series 0 to an axis named 'distance'.
             },
             axes: {
                 y: {
@@ -41,13 +41,16 @@
                 }
             },
             vAxis: {
-                format: '0' // Y-축의 눈금 값을 정수로 표시
+                minValue: 0,
+                format: '₩#,##0' // 한국 돈 표시 형식으로 설정
             },
             hAxis: {
                 textStyle: {
                     fontSize: 16, // 원하는 글꼴 크기로 조절
                 },
+                format: '₩#,##0' // 한국 돈 표시 형식으로 설정
             }
+
 
         };
 

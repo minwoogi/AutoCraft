@@ -29,45 +29,9 @@
         ]);
 
 
-        // var materialOptions = {
-        //     width: '100%',
-        //
-        //     backgroundColor: {
-        //         'fill': '#EEEEEE'
-        //     },
-        //     chartArea: {
-        //         backgroundColor: {
-        //             'fill': '#EEEEEE'
-        //         }
-        //     },
-        //
-        //     chart: {
-        //         title: '기간별 유류비',
-        //         subtitle: ' ',
-        //     },
-        //     titleTextStyle: {
-        //         fontSize: 20, // 타이틀 폰트 크기
-        //         bold: true,   // 타이틀 볼드체 설정
-        //         textAlign: 'center' // 타이틀 가운데 정렬
-        //     },
-        //     series: {
-        //         0: {axis: '준중형 차량', color: '#70AD47'}, // Bind series 0 to an axis named 'distance'.
-        //         1: {axis: '나의 차량', color: '#5B9BD5'} // Bind series 1 to an axis named 'brightness'.
-        //     },
-        //     axes: {
-        //         y: {
-        //             distance: {label: 'parsecs'}, // Left y-axis.
-        //             brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
-        //         }
-        //     },
-        //     vAxis: {
-        //         format: '0' // Y-축의 눈금 값을 정수로 표시
-        //     }
-        //
-        // };
-
         var materialOptions = {
             width: '100%',
+
             backgroundColor: {
                 'fill': '#EEEEEE'
             },
@@ -76,30 +40,34 @@
                     'fill': '#EEEEEE'
                 }
             },
+
             chart: {
                 title: '기간별 유류비',
                 subtitle: ' ',
             },
             titleTextStyle: {
-                fontSize: 20,
-                bold: true,
-                textAlign: 'center'
+                fontSize: 20, // 타이틀 폰트 크기
+                bold: true,   // 타이틀 볼드체 설정
+                textAlign: 'center' // 타이틀 가운데 정렬
             },
-            seriesType: 'bars', // 'bars'로 설정하여 막대 그래프를 사용
             series: {
-                0: {targetAxisIndex: 0, type: 'bars', color: '#70AD47'}, // 첫 번째 series를 왼쪽 Y-축 (인덱스 0)에 연결
-                1: {targetAxisIndex: 1, type: 'line', color: '#5B9BD5'} // 두 번째 series를 오른쪽 Y-축 (인덱스 1)에 연결
+                0: {axis: '준중형 차량', color: '#70AD47'}, // Bind series 0 to an axis named 'distance'.
+                1: {axis: '나의 차량', color: '#5B9BD5'} // Bind series 1 to an axis named 'brightness'.
             },
             axes: {
                 y: {
-                    0: {label: '기본 차량 유류비 (₩)', format: '₩#,###'},
-                    1: {label: '견적 차량 유류비 (₩)', format: '₩#,###'}
+                    distance: {label: 'parsecs'}, // Left y-axis.
+                    brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
                 }
             },
             vAxis: {
-                format: '₩#,###'
+                format: '0' // Y-축의 눈금 값을 정수로 표시
             }
+
         };
+
+
+
 
         function drawMaterialChart1() {
             var materialChart = new google.charts.Bar(chartDiv);

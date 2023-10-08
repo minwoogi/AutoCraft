@@ -38,12 +38,13 @@
             },
             axes: {
                 y: {
+                    format :'g',
                     distance: {label: 'parsecs'}, // Left y-axis.
                     brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
                 }
             },
             vAxis: {
-                format: '0' // Y-축의 눈금 값을 정수로 표시
+                format: '###,###g' // Y-축의 눈금 값을 정수로 표시
             },
             hAxis: {
                 textStyle: {

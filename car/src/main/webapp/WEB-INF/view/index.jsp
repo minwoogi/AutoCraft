@@ -278,7 +278,7 @@
                                         <c:forEach var="year" begin="1" end="10">
                                             <c:set var="defaultYear" value="${year}년"/>
                                             <c:if test="${year == 7}">
-                                                <option value="${year}(기본)">${defaultYear}(기본)</option>
+                                                <option value="${year}">${defaultYear}(기본)</option>
                                             </c:if>
                                             <c:if test="${year != 7}">
                                                 <option value="${year}">${defaultYear}</option>

@@ -5,8 +5,6 @@
     google.charts.setOnLoadCallback(drawChart1);
 
 
-
-
     function drawChart1() {
         var chartDivt = document.getElementById('chart_divTest');
 

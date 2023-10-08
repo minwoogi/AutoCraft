@@ -44,12 +44,14 @@
                 }
             },
             vAxis: {
-                format: '0' // Y-축의 눈금 값을 정수로 표시
+                minValue: 0,
+                format: '₩#,##0' // 한국 돈 표시 형식으로 설정
             },
             hAxis: {
                 textStyle: {
                     fontSize: 16, // 원하는 글꼴 크기로 조절
                 },
+                format: '₩#,##0' // 한국 돈 표시 형식으로 설정
             }
 
         };

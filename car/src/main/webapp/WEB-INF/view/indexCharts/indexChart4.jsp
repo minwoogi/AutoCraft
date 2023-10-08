@@ -38,15 +38,17 @@
             },
             axes: {
                 y: {
+                    format: 'km/L', // Y-축의 눈금 값을 정수로 표시
                     distance: {label: 'parsecs'}, // Left y-axis.
                     brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
                 }
             },
             vAxis: {
-                format: '0' // Y-축의 눈금 값을 정수로 표시
+                format: '###,###km/L',
             },
             hAxis: {
                 textStyle: {
+
                     fontSize: 16, // 원하는 글꼴 크기로 조절
                 },
             }
