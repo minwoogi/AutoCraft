@@ -5,21 +5,23 @@
     google.charts.setOnLoadCallback(drawChart1);
 
 
+
+
     function drawChart1() {
-        var chartDiv = document.getElementById('chart_divTest');
+        var chartDivt = document.getElementById('chart_divTest');
 
         var data = google.visualization.arrayToDataTable([
             ['', '기본 차량', '견적 차량'],
-            ['1년', 3, 3],
-            ['2년', 2, 4],
-            ['3년', 6, 4],
-            ['4년', 2, 5],
-            ['5년', 2, 4],
-            ['6년', 4, 6],
-            ['7년', 7, 1],
-            ['8년', 4, 6],
-            ['9년', 5, 5],
-            ['10년', 2, 3]
+            ['1년', 1860040, ${cor1}],
+            ['2년', 3720080, ${cor2}],
+            ['3년', 5580120, ${cor3}],
+            ['4년', 7440160, ${cor4}],
+            ['5년', 9300200, ${cor5}],
+            ['6년', 11160240, ${cor6}],
+            ['7년', 13020280, ${cor7}],
+            ['8년', 14880320, ${cor8}],
+            ['9년', 16740360, ${cor9}],
+            ['10년', 18600400, ${cor10}]
         ]);
 
 
@@ -61,7 +63,7 @@
         };
 
         function drawMaterialChart1() {
-            var materialChart = new google.charts.Bar(chartDiv);
+            var materialChart = new google.charts.Bar(chartDivt);
             materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
         }
 

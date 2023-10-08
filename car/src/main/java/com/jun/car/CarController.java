@@ -27,11 +27,26 @@ public class CarController {
         log.info(carModel.toString());
 
         double finalYunbi = carService.getFinalyunbi(carModel);
-        session.setAttribute("costValue", carService.getCostValue(carModel, finalYunbi, carModel.getYear())); // 유류비 절감금액
-        session.setAttribute("co2Value", carService.getCo2Value(carModel, finalYunbi, carModel.getYear())); // 유류비 절감금액
+        session.setAttribute("costValue", carService.getCostValue(finalYunbi, carModel.getYear())); // 유류비 절감금액
+        session.setAttribute("co2Value", carService.getCo2Value(finalYunbi, carModel.getYear())); // co2 절감금액
 
-        System.out.println(session.getAttribute("costValue"));
-        System.out.println(session.getAttribute("co2Value"));
+
+        int[] co2Vals = carService.getCo2ValueAllYear(finalYunbi);
+        for (int i = 1; i <= 10; i++) {
+            session.setAttribute("cor" + i, co2Vals[i - 1]); // 기간별co2그래프
+        }
+
+        int[] costVals = carService.getCostValueAllYear(finalYunbi);
+        for (int i = 1; i <= 10; i++) {
+            session.setAttribute("cosr" + i, costVals[i - 1]); // 기간별 유류비 그래프
+        }
+
+        session.setAttribute("resultValue", carService.getResultValue(carModel)); //차량 견적금액
+        session.setAttribute("increase", carService.getIncrease(finalYunbi)); // 연비상승 %
+
+        session.setAttribute("composition", carService.getComposition(carModel)); //연비 구성
+
+        session.setAttribute("myCost", carService.getMyCost(finalYunbi, carModel)); //절약 금액
 
         return "redirect:/result";
 

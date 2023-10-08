@@ -13,10 +13,15 @@
 <body>
 
 <script>
-    function formatKoreanCurrency(number, id) {
-        document.getElementById(id).textContent = new Intl.NumberFormat('ko-KR').format(number) + '원';
-    }
+function formatKRW(value, id) {
 
+
+return '₩' + value.toLocaleString('ko-KR');
+}
+
+function formatCo2(value, id) {
+    return   value.toLocaleString('ko-KR')+'g';
+}
 </script>
 
 
@@ -41,7 +46,7 @@
                             차량 견적 금액 ${resultValue}만원
                         </div>
                         <div class="mt-2">
-                            차량 기본 금액 1,560만원
+                            차량 기본 금액 1560만원
                         </div>
                     </div>
                 </div>
@@ -55,7 +60,7 @@
                             유류비 절약 금액
                         </div>
                         <div style="color: #217af4">
-                            ${costValue}원
+                            <script>document.write(formatKRW(${costValue}))</script>원
                         </div>
                     </div>
                     <div style="border: 1px solid #000; border-radius: 30px; padding: 10px; margin: 10px;">
@@ -66,7 +71,7 @@
                             Co2 저감
                         </div>
                         <div style="color: #217af4">
-                            ${co2Value}원
+                            <script>document.write(formatCo2(${co2Value}))</script>
                         </div>
                     </div>
                     <div style="border: 1px solid #000; border-radius: 30px; padding: 10px; margin: 10px;">
@@ -77,7 +82,7 @@
                             연비 상승
                         </div>
                         <div style="color: #217af4">
-                            0,000원
+                            +${increase}%
                         </div>
                     </div>
                 </div>
@@ -108,7 +113,7 @@
                     <jsp:include page="resultCharts/resultCostChart.jsp"></jsp:include>
                 </div>
                 <div class="mb-5" style="font-family: 'GmarketSansMedium', sans-serif; font-size: 30px;">
-                    <i class="bi bi-bar-chart-line"></i>&nbsp;절약금액 : 1000원
+                    <i class="bi bi-bar-chart-line"></i>&nbsp;절약금액 : <script>document.write(formatKRW(${myCost}))</script>원
                 </div>
             </div>
         </div>
