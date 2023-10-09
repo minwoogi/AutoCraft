@@ -27,6 +27,7 @@ public class CarController {
         log.info(carModel.toString());
 
         double finalYunbi = carService.getFinalyunbi(carModel);
+        session.setAttribute("finalYunbi", finalYunbi);
         session.setAttribute("costValue", carService.getCostValue(finalYunbi, carModel.getYear())); // 유류비 절감금액
         session.setAttribute("co2Value", carService.getCo2Value(finalYunbi, carModel.getYear())); // co2 절감금액
 

@@ -13,15 +13,15 @@
 <body>
 
 <script>
-function formatKRW(value, id) {
+    function formatKRW(value, id) {
 
 
-return '₩' + value.toLocaleString('ko-KR');
-}
+        return '₩' + value.toLocaleString('ko-KR');
+    }
 
-function formatCo2(value, id) {
-    return   value.toLocaleString('ko-KR')+'g';
-}
+    function formatCo2(value, id) {
+        return value.toLocaleString('ko-KR') + 'g';
+    }
 </script>
 
 
@@ -37,7 +37,7 @@ function formatCo2(value, id) {
                 <div class="mt-2" style="font-family: 'GmarketSansMedium', sans-serif; font-size: 30px;">
                     <i class="bi bi-cash-coin"></i>&nbsp;차량 견적 금액
                 </div>
-                <div style="flex: 1; text-align: center; display: flex; align-items: center; justify-content: center;">
+                <div style="flex:1; text-align: center; display: flex; align-items: center; justify-content: center;">
                     <div style="margin-right: 20px;">
                         <img src="/img/carcon.png" class="responsive-image d-block" alt="car">
                     </div>
@@ -60,7 +60,8 @@ function formatCo2(value, id) {
                             유류비 절약 금액
                         </div>
                         <div style="color: #217af4">
-                            <script>document.write(formatKRW(${costValue}))</script>원
+                            <script>document.write(formatKRW(${costValue}))</script>
+                            원
                         </div>
                     </div>
                     <div style="border: 1px solid #000; border-radius: 30px; padding: 10px; margin: 10px;">
@@ -93,7 +94,14 @@ function formatCo2(value, id) {
                 </div>
                 <div style="flex: 1; text-align: center; display: flex; align-items: center; justify-content: center;">
                     <jsp:include page="resultCharts/resultPieChart.jsp"></jsp:include>
+                    <div id="finalYunbi" class="color-bg-default" style="font-family: 'GmarketSansMedium', sans-serif; font-size: 30px;">
+                        <label>
+                            <a>최종연비 ${finalYunbi}<br></a>
+
+                        </label>
+                    </div>
                 </div>
+
 
 
             </div>
@@ -113,7 +121,9 @@ function formatCo2(value, id) {
                     <jsp:include page="resultCharts/resultCostChart.jsp"></jsp:include>
                 </div>
                 <div class="mb-5" style="font-family: 'GmarketSansMedium', sans-serif; font-size: 30px;">
-                    <i class="bi bi-bar-chart-line"></i>&nbsp;절약금액 : <script>document.write(formatKRW(${myCost}))</script>원
+                    <i class="bi bi-bar-chart-line"></i>&nbsp;절약금액 :
+                    <script>document.write(formatKRW(${myCost}))</script>
+                    원
                 </div>
             </div>
         </div>

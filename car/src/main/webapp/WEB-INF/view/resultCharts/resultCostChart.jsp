@@ -42,7 +42,7 @@
             },
 
             chart: {
-                title: '기간별 유류비',
+                title: '기간별 유류비(원)',
                 subtitle: ' ',
             },
             titleTextStyle: {
