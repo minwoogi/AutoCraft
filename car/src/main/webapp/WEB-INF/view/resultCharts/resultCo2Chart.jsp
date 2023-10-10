@@ -2,10 +2,10 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
     google.charts.load('current', {'packages': ['corechart', 'bar']});
-    google.charts.setOnLoadCallback(drawChart1);
+    google.charts.setOnLoadCallback(drawChart2);
 
 
-    function drawChart1() {
+    function drawChart2() {
         var chartDivt = document.getElementById('chart_divTest');
 
         var data = google.visualization.arrayToDataTable([
@@ -50,7 +50,7 @@
             },
             axes: {
                 y: {
-                    format :'g',
+                    format: '###,###g',
                     distance: {label: 'parsecs'}, // Left y-axis.
                     brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
                 }
@@ -61,12 +61,12 @@
 
         };
 
-        function drawMaterialChart1() {
+        function drawMaterialChart2() {
             var materialChart = new google.charts.Bar(chartDivt);
             materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
         }
 
-        drawMaterialChart1();
+        drawMaterialChart2();
     }
 </script>
 <div class="h-75 w-75 pb-4" id="chart_divTest"></div>

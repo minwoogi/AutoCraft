@@ -1,37 +1,29 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-    google.charts.load('current', {'packages': ['corechart', 'bar']});
+    google.charts.load('current', {'packages': ['bar']});
     google.charts.setOnLoadCallback(drawChart1);
 
 
-    function formatKRW(value) {
-        // 숫자를 한국 돈 단위로 포맷팅
-        return '₩' + value.toLocaleString('ko-KR');
-    }
-
-
     function drawChart1() {
-        var chartDiv = document.getElementById('chart_div1');
 
         var data = google.visualization.arrayToDataTable([
             ['', '기본 차량', '견적 차량'],
-            ['1년', formatKRW(2676000), formatKRW(${cosr1})],
-            ['2년', formatKRW(5352000), formatKRW(${cosr2})],
-            ['3년', formatKRW(8028000), formatKRW(${cosr3})],
-            ['4년', formatKRW(10704000), formatKRW(${cosr4})],
-            ['5년', formatKRW(13380000), formatKRW(${cosr5})],
-            ['6년', formatKRW(16056000), formatKRW(${cosr6})],
-            ['7년', formatKRW(18732000), formatKRW(${cosr7})],
-            ['8년', formatKRW(21408000), formatKRW(${cosr8})],
-            ['9년', formatKRW(24084000), formatKRW(${cosr9})],
-            ['10년', formatKRW(26760000), formatKRW(${cosr10})]
+            ['1년', 2676000, ${cosr1}],
+            ['2년', 5352000, ${cosr2}],
+            ['3년', 8028000, ${cosr3}],
+            ['4년', 10704000, ${cosr4}],
+            ['5년', 13380000, ${cosr5}],
+            ['6년', 16056000, ${cosr6}],
+            ['7년', 18732000, ${cosr7}],
+            ['8년', 21408000, ${cosr8}],
+            ['9년', 24084000, ${cosr9}],
+            ['10년', 26760000, ${cosr10}]
         ]);
 
 
-        var materialOptions = {
+        var options = {
             width: '100%',
-
             backgroundColor: {
                 'fill': '#EEEEEE'
             },
@@ -50,33 +42,30 @@
                 bold: true,   // 타이틀 볼드체 설정
                 textAlign: 'center' // 타이틀 가운데 정렬
             },
-            series: {
-                0: {axis: '준중형 차량', color: '#70AD47'}, // Bind series 0 to an axis named 'distance'.
-                1: {axis: '나의 차량', color: '#5B9BD5'} // Bind series 1 to an axis named 'brightness'.
-            },
-            axes: {
-                y: {
-                    distance: {label: 'parsecs'}, // Left y-axis.
-                    brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
-                }
-            },
             vAxis: {
-                format: '0' // Y-축의 눈금 값을 정수로 표시
+                minValue: 0,
+                format: '₩#,##0' // 한국 돈 표시 형식으로 설정
+            },
+            hAxis: {
+                textStyle: {
+                    fontSize: 16, // 원하는 글꼴 크기로 조절
+                },
+                format: '₩#,##0' // 한국 돈 표시 형식으로 설정
             }
-
         };
 
+        var chart = new google.charts.Bar(document.getElementById('chart_div1'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+    };
+    drawChart1();
 
 
-
-        function drawMaterialChart1() {
-            var materialChart = new google.charts.Bar(chartDiv);
-            materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-        }
-
-        drawMaterialChart1();
-    }
+    /* function drawMaterialChart1() {
+         var materialChart = new google.charts.Bar(chartDiv);
+         materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+     }*/
 </script>
-<div class="h-75 w-75 pb-4" id="chart_div1"></div>
+<div class="h-100 w-75 pb-4" id="chart_div1"></div>
 
 
