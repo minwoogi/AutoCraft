@@ -215,27 +215,16 @@ public class CarService {
     public int getMyCost(double finalYunbi, CarModel carModel) {
 
 
-        BigDecimal resultValue = new BigDecimal(getResultValue(carModel) * 1000);
+        BigDecimal value1 = new BigDecimal("2676000").multiply(new BigDecimal("12"));
+        BigDecimal value2 = new BigDecimal("2676000")
+                .multiply(new BigDecimal("12.8")
+                        .divide(new BigDecimal(finalYunbi), 2, BigDecimal.ROUND_DOWN));
+        BigDecimal result = value1.subtract(value2.multiply(new BigDecimal("12")));
 
 
-//        BigDecimal costDecimal = new BigDecimal("2676000.0")
-//                .subtract(new BigDecimal("2676000.0")
-//                        .multiply(new BigDecimal("12.8")
-//                                .divide(new BigDecimal(String.valueOf(finalYunbi)), 2, BigDecimal.ROUND_DOWN)))
-//                .multiply(new BigDecimal("12.0"))
-//                .subtract(resultValue.subtract(new BigDecimal(15600000)));
-
-
-        BigDecimal costDecimal = new BigDecimal("2676000.0")
-                .subtract(new BigDecimal("2676000.0").multiply(new BigDecimal("12.8").divide(new BigDecimal(String.valueOf(finalYunbi)), 2, BigDecimal.ROUND_DOWN)))
-                .multiply(new BigDecimal("12.0"))
-                .subtract(resultValue.subtract(new BigDecimal("15600000.0")));
-
-
-        log.info("cost:" + costDecimal);
-
+        log.info("cost:" + result);
         // 정수로 변환
-        int cost = costDecimal.intValue();
+        int cost = result.intValue();
 
         return cost;
     }
