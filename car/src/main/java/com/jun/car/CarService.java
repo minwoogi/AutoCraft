@@ -212,7 +212,7 @@ public class CarService {
         return composition;
     }
 
-    public int getMyCost(double finalYunbi, CarModel carModel) {
+    public int getMyCost(double finalYunbi, CarModel carModel, int resultValue) {
 
 
         BigDecimal value1 = new BigDecimal("2676000").multiply(new BigDecimal("12"));
@@ -222,9 +222,11 @@ public class CarService {
         BigDecimal result = value1.subtract(value2.multiply(new BigDecimal("12")));
 
 
-        log.info("cost:" + result);
+        log.info("cost -->{}", result);
         // 정수로 변환
         int cost = result.intValue();
+
+        cost -= (resultValue - 1560) * 10000; //옵션 추가금액
 
         return cost;
     }

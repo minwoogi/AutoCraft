@@ -47,7 +47,7 @@ public class CarController {
 
         session.setAttribute("composition", carService.getComposition(carModel)); //연비 구성
 
-        session.setAttribute("myCost", carService.getMyCost(finalYunbi, carModel)); //절약 금액
+        session.setAttribute("myCost", carService.getMyCost(finalYunbi, carModel, carService.getResultValue(carModel)) ); //절약 금액
 
         return "redirect:/result";
 
