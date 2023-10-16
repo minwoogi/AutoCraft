@@ -22,6 +22,7 @@ MyCarCustomizer
 
 # 동작화면❗
 
+<image width="1000" src="https://github.com/minwoogi/AutoCraft/assets/96968834/ffadac8b-4523-4be4-ba47-6e06b6e5cfbf">
 
 
 
